@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Squirrelled",
+  "version": "1.0",
+  "description": "Open a popup automatically on desired URLs",
+  "permissions": [
+    "activeTab",
+    "webNavigation",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "host_permissions": [
+    "https://app.amazon.in/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://app.amazon.in/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
